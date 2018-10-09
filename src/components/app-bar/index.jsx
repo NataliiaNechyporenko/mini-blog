@@ -1,33 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Panel from '../shared/panel';
+import {connect} from 'react-redux';
 import Input from '../shared/input';
+import { changeSearch } from '../../redux/actions/search';
 import styles from './styles.module.scss';
 
-const AppBar = ({titleText, search, searchValue}) => ( 
+const AppBar = ({currentSearchValue, onChange, titleText}) => ( 
   <div className={styles.appBar} >
-    <h1 className={styles.appTitle} > {titleText} </h1>
-    <Panel>
+    <div className={styles.contant_conteiner}>
+      <h1 className={styles.appTitle} > {titleText} </h1>
       <Input cls={styles.searchInput} 
         placeholder="Search"
-        onChange={search}
-        value={searchValue}
+        onChange={evt => {onChange(evt.target.value)}}
+        value={currentSearchValue}
         name="search"
         type="text" />
-    </Panel>
+    </div>
   </div>
 );
 
 AppBar.defaultProps = {
   titleText: 'Title here',
-	searchValue: '',
-	search: () => null
 };
 
 AppBar.propTypes = {
-  titleText: PropTypes.string,
-  searchValue: PropTypes.string,
-  search: PropTypes.func
+  currentSearchValue: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  titleText: PropTypes.string
 };
 
-export default AppBar;
+const mSTP = state => ({
+  currentSearchValue: state.searchValue
+});
+
+const mDTP = dispatch => ({
+  onChange: (searchValue) => dispatch(changeSearch(searchValue)),
+});
+
+export default connect(mSTP, mDTP)(AppBar);

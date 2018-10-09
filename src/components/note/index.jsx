@@ -4,24 +4,30 @@ import PropTypes from 'prop-types';
 // import IconButton from '../shared/IconButton';
 import styles from './styles.module.scss';
 
-const Note = ({ title, body, userId }) => (
+const Note = ({ body, author }) => (
   <div className={styles.note} >
-    <h2 className={styles.note_title}>{title}</h2>
-    <p className={styles.autor}>{userId}</p>
+    <p className={styles.autor}>{author.username}</p>
     <p className={styles.note_body}>{body}</p>
   </div>
 );
 
 Note.defaultProps = {
-  title: "Note title",
   body: "Title Content",
+  author: {},
 }
 
 Note.propTypes = {
-  title: PropTypes.string,
   body: PropTypes.string,
-  // id: PropTypes.number.isRequired,
-  userId: PropTypes.number.isRequired,
+  author: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    website: PropTypes.string,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.shape({}),
+    company: PropTypes.shape({})
+  }),
 }; 
 
 export default Note;

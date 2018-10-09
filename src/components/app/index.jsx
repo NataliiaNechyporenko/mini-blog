@@ -1,53 +1,30 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 import AppBar from '../app-bar';
 import NotesList from '../notes-list';
-// import { getFilteredPosts } from '../../utils/selectors.js';
+import { getNotes } from '../../redux/actions/notes';
+import { getUsers } from '../../redux/actions/users';
 import styles from './styles.module.scss';
 
-const INITIAL_STATE = {
-  posts: [],
-  visiblePosts: []
-};
-
 class App extends Component {
-  state = {
-    ...INITIAL_STATE,
-  };
+
 
   componentDidMount() {
-    axios.get('/posts')
-        .then(({data, status}) => {
-            if (status === 200) {
-                this.setState({
-                    posts: data,
-                    visiblePosts: data
-                })
-            }
-    });
-};
-
-searchByName = (evt) => {
-    const value = evt.target.value;
-    this.setState({
-        searchValue: value
-    });
-};
-
+    this.props.getNotes();
+    this.props.getUsers();
+  }
 
   render() {
-    const { searchValue, visiblePosts, posts } = this.state;
-        
-    // const filteredPosts = getFilteredPosts(visiblePosts, searchValue);
-
-
+    const { isLoading } = this.props;
     return (
       <div className={styles.app}>
-        <AppBar cls={styles.searchInput}                         placeholder="Search by name" search={this.searchByName} searchValue={searchValue}/>
-        <NotesList notes={posts} />
+        <AppBar titleText="My mini blog" />
+        <main className={styles.contant_container}>
+        {isLoading ? 'Loading' : <NotesList />}
+        </main>
       </div>
     );
   }
 }
 
-export default App;
+export default connect(state => ({ isLoading: state.notes.loading }), { getNotes, getUsers })(App);
