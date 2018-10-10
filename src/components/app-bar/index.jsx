@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import Input from '../shared/input';
 import { changeSearch } from '../../redux/actions/search';
 import styles from './styles.module.scss';
@@ -8,7 +9,7 @@ import styles from './styles.module.scss';
 const AppBar = ({currentSearchValue, onChange, titleText}) => ( 
   <div className={styles.appBar} >
     <div className={styles.contant_conteiner}>
-      <h1 className={styles.appTitle} > {titleText} </h1>
+    <Link to="/"><h1 className={styles.appTitle} > {titleText} </h1></Link>
       <Input cls={styles.searchInput} 
         placeholder="Search"
         onChange={evt => {onChange(evt.target.value)}}

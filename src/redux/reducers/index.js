@@ -1,12 +1,16 @@
 import { combineReducers } from 'redux';
 import notesReducer from './notes';
 import searchReducer from './search';
-import usersReducer from './users';
+import userReducer from './user';
+import oneNoteReducer from './one-note';
+import commentsReducer from './comments';
 
 const rootReducer = combineReducers({
   notes: notesReducer,
-  users: usersReducer,
-  searchValue: searchReducer
+  user: userReducer,
+  searchValue: searchReducer,
+  oneNote: oneNoteReducer,
+  comments: commentsReducer,
 });
 
 export default rootReducer;

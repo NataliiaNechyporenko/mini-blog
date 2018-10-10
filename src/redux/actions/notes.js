@@ -1,5 +1,12 @@
 import axios from 'axios';
-import { GET_NOTES_SUCCESS, GET_NOTES_FAIL, GET_NOTES_START } from './types';
+import {
+  GET_NOTES_SUCCESS,
+  GET_NOTES_FAIL,
+  GET_NOTES_START,
+  GET_NOTE_BY_ID_SUCCESS,
+  GET_NOTE_BY_ID_FAIL,
+  GET_NOTE_BY_ID_START,
+} from './types';
 
 const getNotesStart = () => ({
   type: GET_NOTES_START, 
@@ -22,4 +29,27 @@ export const getNotes = () => dispatch => {
   .get('/posts')
   .then(({data, status}) => dispatch(getNotesSuccess(data)))
   .catch(err => dispatch(getNotesFail(err.response)));
+};
+
+const getNoteByIdStart = () => ({
+  type: GET_NOTE_BY_ID_START, 
+});
+
+const getNoteByIdSuccess = note => ({
+  type: GET_NOTE_BY_ID_SUCCESS,
+  payload: note,
+});
+
+const getNoteByIdFail = error => ({
+  type: GET_NOTE_BY_ID_FAIL,
+  payload: error,
+})
+
+export const getNoteById = (id) => dispatch => {
+  dispatch(getNoteByIdStart());
+  
+  axios
+  .get(`/posts/${id}`)
+  .then(({data}) => dispatch(getNoteByIdSuccess(data)))
+  .catch(err => dispatch(getNoteByIdFail(err.response)));
 };

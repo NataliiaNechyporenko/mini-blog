@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import AppBar from '../app-bar';
-import NotesList from '../notes-list';
-import { getNotes } from '../../redux/actions/notes';
-import { getUsers } from '../../redux/actions/users';
+import HomePage from '../pages/home';
+// import PostPage from '../pages/post';
+import Note from '../note';
+import NotFoundPage from '../pages/not-found';
 import styles from './styles.module.scss';
 
-class App extends Component {
+const App = () => (
+  <div className={styles.app}>
+    <AppBar titleText="My mini blog" />
+    <main className={styles.contant_container}>
+      <Switch>
+        <Route exact path="/" component={ HomePage } />
+        <Route path="/:id" component={Note} />
+        {/* <Route path="/post" component={ PostPage } /> */}
+        <Route component={ NotFoundPage } />
+        {/* <Redirect to="/" /> */}
+      </Switch>
+    </main>
+  </div>
+);
 
-
-  componentDidMount() {
-    this.props.getNotes();
-    this.props.getUsers();
-  }
-
-  render() {
-    const { isLoading } = this.props;
-    return (
-      <div className={styles.app}>
-        <AppBar titleText="My mini blog" />
-        <main className={styles.contant_container}>
-        {isLoading ? 'Loading' : <NotesList />}
-        </main>
-      </div>
-    );
-  }
-}
-
-export default connect(state => ({ isLoading: state.notes.loading }), { getNotes, getUsers })(App);
+export default App;

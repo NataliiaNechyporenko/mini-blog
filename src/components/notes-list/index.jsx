@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Panel from '../shared/panel'
-import Note from '../note';
+import NotesListItem from '../notes-list-item';
 import Message from '../shared/message';
 import { getFilteredPosts } from '../../utils/selectors';
 import styles from './styles.module.scss';
@@ -13,7 +13,7 @@ const NotesList = ({ notes, users }) => (
       (<Message msg='There is no notes!' />)
       : (notes.map(note => (
           <Panel key={note.id} title={ note.title }>
-              <Note {...note} author={users.find(user => user.id === note.userId)} />
+              <NotesListItem {...note} author={users.find(user => user.id === note.userId)} />
           </Panel>)
       ))
     }

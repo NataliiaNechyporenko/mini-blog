@@ -1,4 +1,17 @@
-.note {
-  padding: 5px;
+@import '../../styles/var';
+
+.note_container {
+  margin: 0;
+  width: 100%;
+  padding: 20px;
 }
 
+.note_title {
+  @include font-size($h2-font-sizes);
+  color: $primary-color;
+}
+
+.note_body {
+  @include font-size($p1-font-sizes);
+  color: $text-color;
+}
