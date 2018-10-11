@@ -13,13 +13,13 @@ class Comments extends Component {
       email: PropTypes.string,
       body: PropTypes.string,
     })),
-    getComments: PropTypes.func,
+    onGetComments: PropTypes.func,
     id: PropTypes.number,
   };
 
   componentDidUpdate() {
-    const { id } = this.props;
-    this.props.getComments(id);
+    const { id, onGetComments } = this.props;
+    onGetComments(id);
   }
 
   render () {
@@ -44,7 +44,7 @@ class Comments extends Component {
 
 Comments.defaultProps = {
   id: 0,
-  getComments: {},
+  onGetComments: () => {},
   comments: {
     id: 0,
     postId: 0,
@@ -57,6 +57,7 @@ const mSTP = state => ({
   comments: state.comments.data
 });
 
-const mDTP = { getComments };
+const mDTP = dispatch => ({ 
+  onGetComments: id => dispatch(getComments(id)) });
 
 export default connect(mSTP, mDTP)(Comments);

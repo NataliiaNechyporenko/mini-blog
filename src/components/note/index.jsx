@@ -16,13 +16,13 @@ class Note extends Component {
       title: PropTypes.string,
       body: PropTypes.string,
     }),
-    getNoteById: PropTypes.func,
+    onGetNoteById: PropTypes.func,
   };
  
   componentDidMount() {
     const id = getIdFromProps(this.props);
-
-    this.props.getNoteById(id);
+    const { onGetNoteById } = this.props;
+    onGetNoteById(id);
   }
 
   render () {
@@ -41,7 +41,7 @@ class Note extends Component {
 
 
 Note.defaultProps = {
-  getNoteById: {},
+  onGetNoteById: () => {},
   oneNote: {
     id: 0,
     userId: 0,
@@ -54,6 +54,7 @@ const mSTP = state => ({
   oneNote: state.oneNote.data,
 });
 
-const mDTP = { getNoteById };
+const mDTP = dispatch => ({ 
+  onGetNoteById: id => dispatch(getNoteById(id)) });
 
 export default connect(mSTP, mDTP)(Note);

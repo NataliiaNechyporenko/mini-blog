@@ -24,6 +24,6 @@ export const getComments = (id) => dispatch => {
   
   axios
   .get(`/posts/${id}/comments`)
-  .then(({data, status}) => dispatch(getCommentsSuccess(data)))
+  .then(({data}) => dispatch(getCommentsSuccess(data)))
   .catch(err => dispatch(getCommentsFail(err.response)));
 };

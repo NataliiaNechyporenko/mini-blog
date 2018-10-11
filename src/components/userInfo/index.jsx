@@ -16,18 +16,13 @@ class UserInfo extends Component {
       address: PropTypes.shape({}),
       company: PropTypes.shape({})
     }),
-    getUserById: PropTypes.func,
+    onGetUserById: PropTypes.func,
     userId: PropTypes.number,
   };
- 
-  // componentDidMount() {
-  //   const { userId } = this.props;
-  //   this.props.getUserById(userId);
-  // }
 
   componentDidUpdate() {
-    const { userId } = this.props;
-    this.props.getUserById(userId);
+    const { userId, onGetUserById } = this.props;
+    onGetUserById(userId);
   }
 
   render () {
@@ -42,7 +37,7 @@ class UserInfo extends Component {
 )}};
 
 UserInfo.defaultProps = {
-  getUserById: {},
+  onGetUserById: () => {},
   userId: 0,
   user: {
     id: 0,
@@ -60,6 +55,7 @@ const mSTP = state => ({
   user: state.user.data, 
 });
 
-const mDTP = { getUserById };
+const mDTP = dispatch => ({ 
+  onGetUserById: id => dispatch(getUserById(id)) });
 
 export default connect(mSTP, mDTP)(UserInfo);

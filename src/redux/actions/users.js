@@ -6,36 +6,35 @@ import {
   GET_USER_BY_ID_START,
  } from './types';
 
-
 const getUsersSuccess = users => ({
   type: GET_USERS_SUCCESS,
   payload: users
-})
+});
 
 export const getUsers = () => dispatch => {
   axios.get('/users')
-  .then(({data, status}) => dispatch(getUsersSuccess(data)));
-    };
+  .then(({data}) => dispatch(getUsersSuccess(data)));
+};
 
-    const getUserByIdStart = () => ({
-      type: GET_USER_BY_ID_START, 
-    });
+const getUserByIdStart = () => ({
+  type: GET_USER_BY_ID_START, 
+});
     
-    const getUserByIdSuccess = user => ({
-      type: GET_USER_BY_ID_SUCCESS,
-      payload: user,
-    });
+const getUserByIdSuccess = user => ({
+  type: GET_USER_BY_ID_SUCCESS,
+  payload: user,
+});
     
-    const getUserByIdFail = error => ({
-      type: GET_USER_BY_ID_FAIL,
-      payload: error,
-    })
+const getUserByIdFail = error => ({
+  type: GET_USER_BY_ID_FAIL,
+  payload: error,
+});
     
-    export const getUserById = (id) => dispatch => {
-      dispatch(getUserByIdStart());
-      
-      axios
-      .get(`/users/${id}`)
-      .then(({data}) => dispatch(getUserByIdSuccess(data)))
-      .catch(err => dispatch(getUserByIdFail(err.response)));
-    };
+export const getUserById = (id) => dispatch => {
+  dispatch(getUserByIdStart());
+  
+  axios
+  .get(`/users/${id}`)
+  .then(({data}) => dispatch(getUserByIdSuccess(data)))
+  .catch(err => dispatch(getUserByIdFail(err.response)));
+};
