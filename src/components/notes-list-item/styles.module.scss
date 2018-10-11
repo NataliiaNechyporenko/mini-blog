@@ -1,4 +1,27 @@
+@import '../../styles/var';
+
 .note {
   padding: 5px;
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
 }
 
+.note_body {
+  padding: 16px 0;
+}
+
+.title {
+  border-bottom: 1px solid $text-color-transparent;
+  color: $primary-color;
+  line-height: 1.3;
+  margin: 0;
+  padding-bottom: 10px;
+}

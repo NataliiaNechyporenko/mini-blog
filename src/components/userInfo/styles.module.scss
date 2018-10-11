@@ -1,5 +1,9 @@
 @import '../../styles/var';
 
+.user_info_block {
+  margin-bottom: 16px;
+}
+
 .user_name {
   @include font-size($h4-font-sizes);
   color: $secondary-color;

@@ -11,11 +11,13 @@ const NotesList = ({ notes, users }) => (
   <div className={styles.list}>
       {notes.length === 0 ?
       (<Message msg='There is no notes!' />)
-      : (notes.map(note => (
-          <Panel key={note.id} title={ note.title }>
+      : 
+      (notes.map(note => (
+          <Panel key={note.id} >
               <NotesListItem {...note} author={users.find(user => user.id === note.userId)} />
           </Panel>)
       ))
+
     }
   </div>
 );

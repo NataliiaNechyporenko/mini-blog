@@ -4,6 +4,7 @@ import Note from '../note';
 
 const PostPage = () => (
   <Route path="/:id" component={Note} />
+  
 );
 
 export default PostPage;

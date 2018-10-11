@@ -14,9 +14,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={ HomePage } />
         <Route path="/:id" component={Note} />
-        {/* <Route path="/post" component={ PostPage } /> */}
         <Route component={ NotFoundPage } />
-        {/* <Redirect to="/" /> */}
       </Switch>
     </main>
   </div>

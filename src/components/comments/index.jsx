@@ -16,22 +16,21 @@ class Comments extends Component {
     getComments: PropTypes.func,
     id: PropTypes.number,
   };
- 
-  componentDidMount() {
-    const { id } = this.props;
 
+  componentDidUpdate() {
+    const { id } = this.props;
     this.props.getComments(id);
   }
 
   render () {
     const { comments } = this.props;
-    console.log(comments);
+
     return (
-<div className={styles.list}>
-<h3 className={styles.comments_title}>Comments:</h3>
-      {comments.length === 0 ? 
-      <p>There is no comments!</p>
-      : (comments.map(comment => (
+      <div className={styles.list}>
+        <h3 className={styles.comments_title}>Comments:</h3>
+        {comments.length === 0 ? 
+        <p>There is no comments!</p>
+        : (comments.map(comment => (
           <div key={comment.id} className={styles.comment_wrapper}>
             <p className={styles.comment_author}>{comment.name}</p>
             <p className={styles.comment_text}>{comment.body}</p>

@@ -27,7 +27,7 @@ export const getNotes = () => dispatch => {
   
   axios
   .get('/posts')
-  .then(({data, status}) => dispatch(getNotesSuccess(data)))
+  .then(({data}) => dispatch(getNotesSuccess(data)))
   .catch(err => dispatch(getNotesFail(err.response)));
 };
 

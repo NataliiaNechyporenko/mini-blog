@@ -2,8 +2,9 @@
 
 // Typography:
 //fonts
-$title-font: 'Overpass', sans-serif;
-$text-font: 'PT Sans', sans-serif;
+$title-font: 'Roboto Bold', sans-serif;
+$text-font: 'Roboto', sans-serif;
+$light-text-font: 'Roboto Light', sans-serif;
 
 //Font Sizes
 $breakpoints: (
@@ -13,51 +14,51 @@ $breakpoints: (
 );
 //Fonts parameters: size, font-family, font-weight, line-height
 $h1-font-sizes: (
-  null  : (30px, $title-font, 600),
-  medium: (42px, $title-font, 600),
-  large : (50px, $title-font, 600)
+  null  : (30px, $title-font, 600, 1),
+  medium: (42px, $title-font, 600, 1),
+  large : (50px, $title-font, 600, 1)
 );
 
 $h2-font-sizes: (
-  null  : (26px, $title-font, 600),
-  medium: (42px, $title-font, 600),
-  large : (42px, $title-font, 600)
+  null  : (24px, $title-font, 600, 1),
+  medium: (26px, $title-font, 600, 1),
+  large : (42px, $title-font, 600, 1)
 );
 
 $h3-font-sizes: (
-  null  : (22px, $title-font, 600),
-  medium: (26px, $title-font, 600),
-  large : (26px, $title-font, 600)
+  null  : (22px, $title-font, 600, 1),
+  medium: (26px, $title-font, 600, 1),
+  large : (26px, $title-font, 600, 1)
 );
 
 $h4-font-sizes: (
-  null  : (22px, $title-font, 600),
-  medium: (22px, $title-font, 600),
-  large : (22px, $title-font, 600)
+  null  : (22px, $title-font, 600, 1),
+  medium: (22px, $title-font, 600, 1),
+  large : (22px, $title-font, 600, 1)
 );
 
 $h5-font-sizes: (
-  null  : (16px, $title-font, 600),
-  medium: (18px, $title-font, 600),
-  large : (18px, $title-font, 600)
+  null  : (16px, $title-font, 600, 1),
+  medium: (18px, $title-font, 600, 1),
+  large : (18px, $title-font, 600, 1)
 );
 
 $p1-font-sizes: (
-  null  : (20px, $text-font, 400),
-  medium: (20px, $text-font, 400),
-  large : (20px, $text-font, 400)
+  null  : (20px, $text-font, 400, 1),
+  medium: (20px, $text-font, 400, 1),
+  large : (20px, $text-font, 400, 1)
 );
 
 $p2-font-sizes: (
-  null  : (16px, $text-font, 400),
-  medium: (16px, $text-font, 400),
-  large : (16px, $text-font, 400)
+  null  : (16px, $text-font, 400, 1),
+  medium: (16px, $text-font, 400, 1),
+  large : (16px, $text-font, 400, 1)
 );
 
 $p3-font-sizes: (
-  null  : (14px, $text-font, 400),
-  medium: (14px, $text-font, 400),
-  large : (14px, $text-font, 400)
+  null  : (14px, $text-font, 400, 1),
+  medium: (14px, $text-font, 400, 1),
+  large : (14px, $text-font, 400, 1)
 );
 
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {

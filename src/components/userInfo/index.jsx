@@ -20,7 +20,12 @@ class UserInfo extends Component {
     userId: PropTypes.number,
   };
  
-  componentDidMount() {
+  // componentDidMount() {
+  //   const { userId } = this.props;
+  //   this.props.getUserById(userId);
+  // }
+
+  componentDidUpdate() {
     const { userId } = this.props;
     this.props.getUserById(userId);
   }

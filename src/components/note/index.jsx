@@ -7,7 +7,6 @@ import UserInfo from '../userInfo';
 import styles from './styles.module.scss';
 
 const getIdFromProps = props => props.match.params.id;
-const getUserIdFromProps = props => props.location.state.userId;
 
 class Note extends Component {
   static propTypes = {
@@ -30,12 +29,14 @@ class Note extends Component {
     const { oneNote } = this.props;
 
     return (
-      <div>
+      <div className={styles.note_container}>
         <h1 className={styles.note_title}>{oneNote.title}</h1>
-        <UserInfo userId={getUserIdFromProps(this.props)} />
+        <UserInfo userId={oneNote.userId} />
         <p className={styles.note_body}>{oneNote.body}</p>
-        <Comments id={getIdFromProps(this.props)} />
+        <Comments id={oneNote.id} />
       </div>
+      
+
 )}};
 
 
@@ -50,7 +51,7 @@ Note.defaultProps = {
 };
 
 const mSTP = state => ({ 
-  oneNote: state.oneNote.data, 
+  oneNote: state.oneNote.data,
 });
 
 const mDTP = { getNoteById };
