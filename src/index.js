@@ -9,7 +9,7 @@ import './styles/index.scss';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/mini-blog" >
       <Route path="/" component={App} />
     </BrowserRouter>
   </Provider>,
