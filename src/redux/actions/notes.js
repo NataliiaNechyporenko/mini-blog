@@ -26,7 +26,7 @@ export const getNotes = () => dispatch => {
   dispatch(getNotesStart());
   
   axios
-  .get('/posts')
+  .get('https://jsonplaceholder.typicode.com/posts')
   .then(({data}) => dispatch(getNotesSuccess(data)))
   .catch(err => dispatch(getNotesFail(err.response)));
 };
@@ -49,7 +49,7 @@ export const getNoteById = (id) => dispatch => {
   dispatch(getNoteByIdStart());
   
   axios
-  .get(`/posts/${id}`)
+  .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
   .then(({data}) => dispatch(getNoteByIdSuccess(data)))
   .catch(err => dispatch(getNoteByIdFail(err.response)));
 };

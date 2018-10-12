@@ -23,7 +23,7 @@ export const getComments = (id) => dispatch => {
   dispatch(getCommentsStart());
   
   axios
-  .get(`/posts/${id}/comments`)
+  .get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
   .then(({data}) => dispatch(getCommentsSuccess(data)))
   .catch(err => dispatch(getCommentsFail(err.response)));
 };

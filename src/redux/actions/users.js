@@ -12,7 +12,7 @@ const getUsersSuccess = users => ({
 });
 
 export const getUsers = () => dispatch => {
-  axios.get('/users')
+  axios.get('https://jsonplaceholder.typicode.com/users')
   .then(({data}) => dispatch(getUsersSuccess(data)));
 };
 
@@ -34,7 +34,7 @@ export const getUserById = (id) => dispatch => {
   dispatch(getUserByIdStart());
   
   axios
-  .get(`/users/${id}`)
+  .get(`https://jsonplaceholder.typicode.com/users/${id}`)
   .then(({data}) => dispatch(getUserByIdSuccess(data)))
   .catch(err => dispatch(getUserByIdFail(err.response)));
 };
