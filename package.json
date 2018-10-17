@@ -2,7 +2,7 @@
   "name": "mini-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nataliianechyporenko.github.io/",
+  "homepage": "https://nataliianechyporenko.github.io/miniBlog/build/",
   "dependencies": {
     "axios": "^0.18.0",
     "gh-pages": "^2.0.1",
