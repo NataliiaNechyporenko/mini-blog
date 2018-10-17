@@ -1,0 +1,40 @@
+@import './reset';
+@import './fonts';
+@import './var';
+
+html {
+  height: 100%;
+}
+
+body,
+main {
+  @include font-size($p2-font-sizes);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+p, ul, ol {
+  @include font-size($p2-font-sizes);
+}

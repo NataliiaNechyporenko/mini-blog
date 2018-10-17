@@ -1,0 +1,58 @@
+@import '../../styles/var';
+
+.appBar {
+  box-sizing: border-box;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.contant_conteiner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1280px;
+  padding: 10px 0;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 421px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 24px 15px;
+  }
+}
+
+.appTitle {
+  color: $text-color;
+  display: block;
+  line-height: 1;
+  margin-bottom: 25px;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  @media screen and (min-width: 421px) {
+    margin-bottom: 0;
+  }
+}
+
+.searchInput {
+  @include font-size($p2-font-sizes);
+  border: none;
+  border-bottom: 1px solid $text-color-transparent;
+  display: block;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.searchInput:focus {
+  outline: none;
+}

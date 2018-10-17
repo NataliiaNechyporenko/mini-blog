@@ -1,0 +1,112 @@
+// @import './fonts';
+
+// Typography:
+//fonts
+$title-font: 'Roboto Bold', sans-serif;
+$text-font: 'Roboto', sans-serif;
+$light-text-font: 'Roboto Light', sans-serif;
+
+//Font Sizes
+$breakpoints: (
+  small : 480px,
+  medium: 700px,
+  large : 1024px
+);
+//Fonts parameters: size, font-family, font-weight, line-height
+$h1-font-sizes: (
+  null  : (30px, $title-font, 600, 1),
+  medium: (42px, $title-font, 600, 1),
+  large : (50px, $title-font, 600, 1)
+);
+
+$h2-font-sizes: (
+  null  : (24px, $title-font, 600, 1),
+  medium: (26px, $title-font, 600, 1),
+  large : (42px, $title-font, 600, 1)
+);
+
+$h3-font-sizes: (
+  null  : (22px, $title-font, 600, 1),
+  medium: (26px, $title-font, 600, 1),
+  large : (26px, $title-font, 600, 1)
+);
+
+$h4-font-sizes: (
+  null  : (22px, $title-font, 600, 1),
+  medium: (22px, $title-font, 600, 1),
+  large : (22px, $title-font, 600, 1)
+);
+
+$h5-font-sizes: (
+  null  : (16px, $title-font, 600, 1),
+  medium: (18px, $title-font, 600, 1),
+  large : (18px, $title-font, 600, 1)
+);
+
+$p1-font-sizes: (
+  null  : (20px, $text-font, 400, 1),
+  medium: (20px, $text-font, 400, 1),
+  large : (20px, $text-font, 400, 1)
+);
+
+$p2-font-sizes: (
+  null  : (16px, $text-font, 400, 1),
+  medium: (16px, $text-font, 400, 1),
+  large : (16px, $text-font, 400, 1)
+);
+
+$p3-font-sizes: (
+  null  : (14px, $text-font, 400, 1),
+  medium: (14px, $text-font, 400, 1),
+  large : (14px, $text-font, 400, 1)
+);
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
+
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size) == "list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      font-family: nth($fs-font-size, 2);
+    }
+    @if (length($fs-font-size) > 2) {
+      font-weight: nth($fs-font-size, 3);
+    }
+    @if (length($fs-font-size) > 3) {
+      line-height: nth($fs-font-size, 4);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
+
+// Colors
+$primary-color: #ef6c00;
+$secondary-color: #283593;
+$bg-color: #fff;
+$text-color: #424242;
+
+$primary-transparent: rgba(239,108,0,0.3);
+$secondary-color-transparent: rgba(40,53,147,0.3);
+$bg-color-transparent: rgba(255,255,255,0.3);
+$text-color-transparent: rgba(0,0,0,0.3);
