@@ -1,0 +1,14 @@
+{
+  "main.css": "/mini-blog/static/css/main.1d5bc22d.chunk.css",
+  "main.js": "/mini-blog/static/js/main.a687cfd7.chunk.js",
+  "main.js.map": "/mini-blog/static/js/main.a687cfd7.chunk.js.map",
+  "static/js/1.77f81135.chunk.js": "/mini-blog/static/js/1.77f81135.chunk.js",
+  "static/js/1.77f81135.chunk.js.map": "/mini-blog/static/js/1.77f81135.chunk.js.map",
+  "runtime~main.js": "/mini-blog/static/js/runtime~main.c1ae01e9.js",
+  "runtime~main.js.map": "/mini-blog/static/js/runtime~main.c1ae01e9.js.map",
+  "static/media/index.scss": "/mini-blog/static/media/roboto-v16-cyrillic-ext_latin-700.e2ea7fe2.woff",
+  "static/css/main.1d5bc22d.chunk.css.map": "/mini-blog/static/css/main.1d5bc22d.chunk.css.map",
+  "index.html": "/mini-blog/index.html",
+  "precache-manifest.3a65a961601bf61938eee615d99655f4.js": "/mini-blog/precache-manifest.3a65a961601bf61938eee615d99655f4.js",
+  "service-worker.js": "/mini-blog/service-worker.js"
+}
