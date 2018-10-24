@@ -20,10 +20,12 @@ class UserInfo extends Component {
     userId: PropTypes.number,
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { userId, onGetUserById } = this.props;
+    if (userId !== prevProps.userId) {
     onGetUserById(userId);
-  }
+    };
+  };
 
   render () {
     const { user } = this.props;

@@ -17,10 +17,12 @@ class Comments extends Component {
     id: PropTypes.number,
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const { id, onGetComments } = this.props;
-    onGetComments(id);
-  }
+    if (id !== prevProps.id) {
+      onGetComments(id);
+    };
+  };
 
   render () {
     const { comments } = this.props;
@@ -45,12 +47,7 @@ class Comments extends Component {
 Comments.defaultProps = {
   id: 0,
   onGetComments: () => {},
-  comments: {
-    id: 0,
-    postId: 0,
-    title: 'Post title',
-    body: 'No text',
-  }
+  comments: []
 };
 
 const mSTP = state => ({ 

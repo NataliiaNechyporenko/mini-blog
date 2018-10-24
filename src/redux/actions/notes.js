@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import {
   GET_NOTES_SUCCESS,
   GET_NOTES_FAIL,
