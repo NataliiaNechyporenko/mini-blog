@@ -1,7 +1,7 @@
 {
   "main.css": "/miniBlog/build/static/css/main.3f9e3255.chunk.css",
-  "main.js": "/miniBlog/build/static/js/main.88c8f75d.chunk.js",
-  "main.js.map": "/miniBlog/build/static/js/main.88c8f75d.chunk.js.map",
+  "main.js": "/miniBlog/build/static/js/main.d93a5730.chunk.js",
+  "main.js.map": "/miniBlog/build/static/js/main.d93a5730.chunk.js.map",
   "static/js/1.77f81135.chunk.js": "/miniBlog/build/static/js/1.77f81135.chunk.js",
   "static/js/1.77f81135.chunk.js.map": "/miniBlog/build/static/js/1.77f81135.chunk.js.map",
   "runtime~main.js": "/miniBlog/build/static/js/runtime~main.83851ea5.js",
@@ -9,6 +9,6 @@
   "static/media/index.scss": "/miniBlog/build/static/media/roboto-v16-cyrillic-ext_latin-700.e2ea7fe2.woff",
   "static/css/main.3f9e3255.chunk.css.map": "/miniBlog/build/static/css/main.3f9e3255.chunk.css.map",
   "index.html": "/miniBlog/build/index.html",
-  "precache-manifest.aee9919ed7321bf6786292305d2ef0cf.js": "/miniBlog/build/precache-manifest.aee9919ed7321bf6786292305d2ef0cf.js",
+  "precache-manifest.1b8d9df224269d3a850590ef53eaadba.js": "/miniBlog/build/precache-manifest.1b8d9df224269d3a850590ef53eaadba.js",
   "service-worker.js": "/miniBlog/build/service-worker.js"
 }

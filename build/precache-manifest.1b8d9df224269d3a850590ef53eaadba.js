@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/miniBlog/build/static/media/roboto-v16-cyrillic-ext_latin-700.e2ea7fe2.woff"
   },
   {
-    "revision": "88c8f75d1946a31a723f",
+    "revision": "d93a5730b1240a8f033f",
     "url": "/miniBlog/build/static/css/main.3f9e3255.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/miniBlog/build/static/media/roboto-v16-cyrillic-ext_latin-700.6abc1a1f.woff2"
   },
   {
-    "revision": "88c8f75d1946a31a723f",
-    "url": "/miniBlog/build/static/js/main.88c8f75d.chunk.js"
+    "revision": "d93a5730b1240a8f033f",
+    "url": "/miniBlog/build/static/js/main.d93a5730.chunk.js"
   },
   {
     "revision": "cdbe4675ff289a7e171ce389add6f9df",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/miniBlog/build/static/media/roboto-v16-cyrillic-ext_latin-300.950fd74d.woff"
   },
   {
-    "revision": "0aeabd8fd86464df0692ab015e7bbb49",
+    "revision": "fce4db600910d45a462ef99d7bcad46e",
     "url": "/miniBlog/build/index.html"
   }
 ];
